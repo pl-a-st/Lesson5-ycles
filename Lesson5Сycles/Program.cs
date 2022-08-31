@@ -14,12 +14,18 @@ namespace Lesson5Сycles {
             Random rnd = new Random();
             //MakeCycleWhile(EXAMPLE_INT);
             //MakeCycleDoWhile(rnd, min, max, EXAMPLE_INT);
-            MakeCucleFor(EXAMPLE_INT);
+            //MakeCucleFor(EXAMPLE_INT);
+            MakeForEach();
             Console.ReadKey();
         }
-
         static double GetRandomDouble(Random rnd, double min, double max) {
             return rnd.NextDouble() * (max - min) + min;
+        }
+        private static void MakeForEach() {
+            foreach (char ch in "пример") {
+                char newChar = Char.ToUpper(ch);
+                Console.WriteLine(newChar);
+            }
         }
         static void MakeCucleFor(int example) {
             for (int i = 200; i >= example; i /= 2) {
