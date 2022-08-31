@@ -15,16 +15,29 @@ namespace Lesson5Сycles {
             //MakeCycleWhile(EXAMPLE_INT);
             //MakeCycleDoWhile(rnd, min, max, EXAMPLE_INT);
             //MakeCucleFor(EXAMPLE_INT);
-            MakeForEach();
+            //MakeForEachBreak();
+            MakeForEachContinue();
             Console.ReadKey();
         }
         static double GetRandomDouble(Random rnd, double min, double max) {
             return rnd.NextDouble() * (max - min) + min;
         }
-        private static void MakeForEach() {
+        private static void MakeForEachContinue() {
+            foreach (char ch in "пример") {
+                char newChar = Char.ToUpper(ch);
+                if (ch == 'м') {
+                    continue;
+                }
+                Console.WriteLine(newChar);
+            }
+        }
+        private static void MakeForEachBreak() {
             foreach (char ch in "пример") {
                 char newChar = Char.ToUpper(ch);
                 Console.WriteLine(newChar);
+                if (ch == 'м') {
+                    break;
+                }
             }
         }
         static void MakeCucleFor(int example) {
