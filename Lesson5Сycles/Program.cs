@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 
 namespace Lesson5Сycles {
@@ -16,9 +17,24 @@ namespace Lesson5Сycles {
             //MakeCycleDoWhile(rnd, min, max, EXAMPLE_INT);
             //MakeCucleFor(EXAMPLE_INT);
             //MakeForEachBreak();
-            MakeForEachContinue();
+            //MakeForEachContinue();
+            MakeForFor(EXAMPLE_INT);
             Console.ReadKey();
         }
+
+        private static void MakeForFor(int exampleInt) {
+            for (int i = 0; i < exampleInt; i++) {
+                for (int j = 0; j < exampleInt; j++) {
+                    Console.Clear();
+                    if (i == 0 && j == 0) {
+                        continue;
+                    }
+                    Console.WriteLine($"{i},{j}");
+                    Thread.Sleep(300);
+                }
+            }
+        }
+
         static double GetRandomDouble(Random rnd, double min, double max) {
             return rnd.NextDouble() * (max - min) + min;
         }
