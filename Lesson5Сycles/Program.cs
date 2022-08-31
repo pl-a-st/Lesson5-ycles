@@ -13,12 +13,18 @@ namespace Lesson5Сycles {
             double max = 8;
             Random rnd = new Random();
             //MakeCycleWhile(EXAMPLE_INT);
-            MakeCycleDoWhile(rnd, min, max, EXAMPLE_INT);
+            //MakeCycleDoWhile(rnd, min, max, EXAMPLE_INT);
+            MakeCucleFor(EXAMPLE_INT);
             Console.ReadKey();
         }
 
         static double GetRandomDouble(Random rnd, double min, double max) {
             return rnd.NextDouble() * (max - min) + min;
+        }
+        static void MakeCucleFor(int example) {
+            for (int i = 200; i >= example; i /= 2) {
+                Console.WriteLine(i);
+            }
         }
         static void MakeCycleDoWhile(Random rnd, double min, double max, int example) {
             double myDouble;
