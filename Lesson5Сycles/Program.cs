@@ -9,8 +9,14 @@ namespace Lesson5Сycles {
     class Program {
         static void Main(string[] args) {
             const int EXAMPLE_INT = 6;
-            MakeCycleWhile(EXAMPLE_INT);
+            Random rnd = new Random();
+            //MakeCycleWhile(EXAMPLE_INT);
+            double myDouble = GetRandomDouble(rnd, 2, 8);
+            Console.WriteLine(myDouble);
             Console.ReadKey();
+        }
+        static double GetRandomDouble(Random rnd, double min, double max) {
+            return rnd.NextDouble() * (max - min) + min;
         }
         static void MakeCycleWhile(int exampleInt) {
             int startInt = 0;
